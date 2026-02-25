@@ -1,0 +1,19 @@
+category-encoders==2.6.3
+comut==0.0.3
+hydra-core==1.3.2
+ipython==8.14.0
+networkx==3.2.1
+numpy>=2.0
+pandas==2.2.2
+qiskit>=2.0
+qiskit-aer==0.17.2
+qiskit-algorithms==0.4.0
+qiskit-ibm-runtime==0.45.1
+qiskit-machine-learning==0.9.0
+qiskit-nature==0.7.2
+# qiskit-transpiler-service==0.4.3  # Incompatible with qiskit>=2.0
+scikit-learn==1.5.0
+scipy==1.13.0
+seaborn==0.13.2
+tensorflow>=2.17.0
+palettable

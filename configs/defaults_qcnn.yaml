@@ -1,0 +1,60 @@
+# File and directory arguments
+dir_root: './'  # Root directory
+dir_output: 'experiments' # Directory for output files to be placed
+file_output: 'Test_QCNN_test5.pkl' # Final results file
+file_weights: 'Test_QCNN_test5.npy' # Intermediate state file with the model weights
+file_objFuncVal: 'Test_QCNN_test5_objFuncVal.npy' # Objective function values, i.e. loss
+file_train_data: 'input_data/NeoantigenData//mutant_peptide_df_categorical_train_split1.csv' # File with input training data
+file_test_data: 'input_data/NeoantigenData//mutant_peptide_df_categorical_test_split1.csv' # File with input test data
+
+# Quantum device parameters
+channel: 'ibm_quantum_platform'
+instance: 'instance_alias' 
+backend: 'statevector'  # Specify backend.  It can be specific e.g. 'ibm_sherbrooke', least busy ('ibm_least'), noisy simulator based on real device ('noisy_ibm_XXXX'), or statevector simulator 'statevector'
+device: CPU  # If running on simulation, can specify 'CPU' or 'GPU'.  GPU requires installing qiskit-aer-gpu
+
+# You can specify the exact set and order of qubits to use for device, or leave empty and it will default to first XX qubits.  Here is example for Sherbrooke at 60 qubits [5, 4, 3, 2, 1, 0, 14, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 35, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 52, 56, 57, 58, 59, 60, 61, 62, 72, 81, 80, 79, 78, 77, 76, 75, 90, 94, 95, 96, 109, 114, 115, 116, 117, 118, 110, 100, 99, 98]
+qbit_idx: # 
+readoutThreshold: 0.12
+edgeThreshold: 0.2
+
+# Biological experimental parameters
+motifs_to_use:  ['motif0','motif2', ] ##  Specify which features, i.e. features as column names in the input file to use.
+label_name: 'Tcell_response' # Specify column name of the target label to use
+label_binarization_threshold:  # binarizes assuming continuous value, otherwise set to none, if mode is classification
+
+# QCNN parameters
+mode: 'classification' # Which mode to use the QCNN.  Regression should be avoided for now 'classification', 'regression'
+pyramid_circuit: True # Boolean whether to use the new circuit design based on the SWAP pyramid (TRUE) or the older design (FALSE)
+shots: 10000 # only for hardware
+resilience_level : 1 # Built in error mitigation level only for hardware
+optimization_level : 1 # Built in transpilation optimization level only for hardware
+pauliTwirling: False # Boolean to use Pauli Twirling to mitgate error
+optimizer: 'SPSA'  # 'SPSA', 'COBYLA', 'L_BFGS_B'; 'LBFGS', 'Adam', 'SGD' only in qcnn_torchconnector.py
+loss: 'cross_entropy'  # ‘absolute_error’ (i.e. L1 Loss), ‘squared_error’ (i.e. L2 Loss), 'cross_entropy'
+primitive: 'estimator'  # 'estimator', 'sampler'
+custom_interpret: 'last_qubit'  # 'last_qubit', 'parity' only in SamplerQNN
+max_iter: 5 # Number of iterations to run
+seed: 49  # Global seed
+encoder: 'binary'  #  Specific data encoding: 'one-hot', 'binary', 'binary-flip'
+featureMap: 'Z'  #  Specify feature map to use 'Z', 'ZZ', 'qrac_21', 'qrac_31', 'basis'
+featureMap_reps: 1  # Number of feature map reps currently only for Z and ZZ
+entanglement: 'pairwise'  # Type of entanglement for ZZ feature map 'full', 'linear', 'reverse_linear', 'pairwise', 'circular', 'sca'
+conv_circuit: 0  # Specify type of convolutional ansantz -  0: 3-param, 1: 15-param
+pool_circuit: 0  # Specify type of pooling ansantz - 0: tutorial, 1: non-param DC, 2: 2-param crz crx, 3: controlled u3
+pool_until: 1  # if greater then 1 qubit, then there is a fully connected layer in the end
+learning_rate_a:   1.62 # Specify the learning rate for SPSA as a float, e.g. 0.21.  If empty, SPSA will autocalibrate by running ~50 iterations prior to the experimental start. 
+perturbation_gamma :  0.101 # Specify the perturbation gamma for SPSA as a float, e.g. 0.1.  If empty, SPSA will autocalibrate by running ~50 iterations prior to the experimental start 
+
+
+# Model parameters that are deprecated or should generally be left to default
+allow_spacer_motif_last_position: True  # This should be left to True, but indicates whether to filter the data to keep samples with a spacer motif in the last position (TRUE) or exclude them (FALSE)
+filter_for_spacer_motif_third_position: False # This should be left to False, but indicates whether to filter the data to keep only samples with a spacer motif in the third position (TRUE), or to keep all samples (FALSE)
+reset_prior_iter: False  # Boolean to reset the total experimental run iteration counter back to 0, whether or not you are using a saved weight file "file_weights" or not. Typically TRUE if running a HW experiment starting for the weights of a simulation
+pad_observable: False # Boolean to pad the observable value with Identify. Should generaly be left to False
+min_label_value: -1 # Label assigned to non '1' class
+data_reuploading: False  # only used in qcnn_data_reuploading.py
+learning_rate: 1 # only used in qcnn_torchconnector.py
+epochs: 1  # only used in qcnn_torchconnector.py
+batch_size: 100  # only used in qcnn_torchconnector.py
+
