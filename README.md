@@ -20,7 +20,7 @@ doi: https://doi.org/10.1101/2025.07.29.667313
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/IBM/Q-CHIPP.git
 cd Q-CHIPP/
 ```
 
