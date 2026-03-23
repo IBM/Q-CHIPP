@@ -1,0 +1,72 @@
+{
+  "title": "Quantum Convolutional HLA Immunogenic Peptide Prediction (Q-CHIPP)",
+  "description": "Code accompanying the Science Advances manuscript on quantum neural networks for immunogenic peptide prediction.",
+  "license": "Apache-2.0",
+  "upload_type": "software",
+  "version": "v1.0.0",
+  "creators": [
+    {
+      "name": "Peters, Ryan",
+      "affiliation": "Cleveland Clinic"
+    },
+    {
+      "name": "Rhrissorrakrai, Kahn",
+      "affiliation": "IBM Research"
+    },
+     {
+      "name": "Parthasarathy, Prerana Bangalore",
+      "affiliation": "Cleveland Clinic"
+    },
+    {
+      "name": "Gujarati, Tanvi",
+      "affiliation": "IBM Quantum"
+    },
+     {
+      "name": "Tolunay, Meltem",
+      "affiliation": "IBM Quantum"
+    },
+    {
+      "name": "Shi, Jie",
+      "affiliation": "IBM Research"
+    },
+    {
+      "name": "Weber, Jeffrey",
+      "affiliation": "IBM Research"
+    },
+    {
+      "name": "Chan, Timothy",
+      "affiliation": "Cleveland Clinic"
+    }, 
+    {
+      "name": "Parida, Laxmi",
+      "affiliation": "IBM Research"
+    },
+    {
+      "name": "Capponi, Sara",
+      "affiliation": "IBM Research"
+    },
+    {
+      "name": "Utro, Filippo",
+      "affiliation": "IBM Research",
+      "orcid": "0000-0003-3226-7642"
+    },
+     {
+      "name": "Alban, Tyler",
+      "affiliation": "Cleveland Clinic"
+    },
+  ],
+  "keywords": [
+    "quantum machine learning",
+    "immunogenic peptide prediction",
+    "HLA",
+    "neoantigen prediction",
+    "quantum neural networks"
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/IBM/Q-CHIPP",
+      "relation": "isSupplementTo"
+    }
+  ]
+}
