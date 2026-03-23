@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Quantum Convolutional HLA Immunogenic Peptide Prediction (Q-CHIPP)"
+type: software
+license: Apache-2.0
+repository-code: https://github.com/IBM/Q-CHIPP
+
+authors:
+  - family-names: Peters
+    given-names: Ryan
+    affiliation: Cleveland Clinic
+
+  - family-names: Rhrissorrakrai
+    given-names: Kahn
+    affiliation: IBM Research
+
+  - family-names: Parthasarathy
+    given-names: Prerana Bangalore
+    affiliation: Cleveland Clinic
+
+  - family-names: Gujarati
+    given-names: Tanvi
+    affiliation: IBM Quantum
+
+  - family-names: Tolunay
+    given-names: Meltem
+    affiliation: IBM Quantum
+
+  - family-names: Shi
+    given-names: Jie
+    affiliation: IBM Research
+
+  - family-names: Weber
+    given-names: Jeffrey
+    affiliation: IBM Research
+
+  - family-names: Chan
+    given-names: Timothy
+    affiliation: Cleveland Clinic
+
+  - family-names: Parida
+    given-names: Laxmi
+    affiliation: IBM Research
+
+  - family-names: Capponi
+    given-names: Sara
+    affiliation: IBM Research
+
+  - family-names: Utro
+    given-names: Filippo
+    affiliation: IBM Research
+    orcid: https://orcid.org/0000-0003-3226-7642
+
+  - family-names: Alban
+    given-names: Tyler
+    affiliation: Cleveland Clinic
